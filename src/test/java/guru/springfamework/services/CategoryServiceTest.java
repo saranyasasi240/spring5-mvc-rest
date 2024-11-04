@@ -6,7 +6,6 @@ import guru.springfamework.domain.Category;
 import guru.springfamework.repositories.CategoryRepository;
 import guru.springfamework.service.CategoryService;
 import guru.springfamework.service.CategoryServiceImpl;
-import org.aspectj.lang.annotation.Before;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
@@ -32,7 +31,7 @@ public class CategoryServiceTest {
     public void setUp() throws Exception {
         MockitoAnnotations.initMocks(this);
 
-        categoryService = new CategoryServiceImpl(categoryRepository, CategoryMapper.INSTANCE);
+        categoryService = new CategoryServiceImpl(CategoryMapper.INSTANCE,categoryRepository);
     }
 
     @Test
