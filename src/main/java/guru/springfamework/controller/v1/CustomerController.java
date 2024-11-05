@@ -6,6 +6,7 @@ import guru.springfamework.service.CustomerService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
@@ -22,7 +23,7 @@ public class CustomerController {
     }
 
     @ApiOperation(value = "This will get a list of customers", notes = "These are some notes about API")
-    @GetMapping
+    @GetMapping(produces = {"application/json", "application/xml"},consumes = MediaType.ALL_VALUE)
     public ResponseEntity<CustomerListDTO> getListofCustomers() {
 
         return new ResponseEntity<CustomerListDTO>(new CustomerListDTO(customerService.getAllCustomers()),
