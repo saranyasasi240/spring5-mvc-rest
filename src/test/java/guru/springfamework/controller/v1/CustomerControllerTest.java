@@ -4,8 +4,8 @@ import guru.springfamework.api.v1.model.CustomerDTO;
 import guru.springfamework.controller.RestResponseEntityExceptionHandler;
 import guru.springfamework.service.CustomerService;
 import guru.springfamework.service.ResourceNotFoundException;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import org.junit.Before;
+import org.junit.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
@@ -34,7 +34,7 @@ public class CustomerControllerTest extends AbstractRestControllerTest {
 
     MockMvc mockMvc;
 
-    @BeforeEach
+    @Before
     public void setUp() throws Exception {
         MockitoAnnotations.initMocks(this);
 

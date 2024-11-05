@@ -2,7 +2,7 @@ package guru.springfamework.controller.v1;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-public class AbstractRestControllerTest {
+public abstract class AbstractRestControllerTest {
     public static String asJsonString(final Object obj) {
         try {
             return new ObjectMapper().writeValueAsString(obj);

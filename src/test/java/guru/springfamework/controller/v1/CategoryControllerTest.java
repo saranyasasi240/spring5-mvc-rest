@@ -4,8 +4,9 @@ import guru.springfamework.api.v1.model.CategoryDTO;
 import guru.springfamework.controller.RestResponseEntityExceptionHandler;
 import guru.springfamework.service.CategoryService;
 import guru.springfamework.service.ResourceNotFoundException;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+
+import org.junit.Before;
+import org.junit.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
@@ -24,7 +25,7 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 
-class CategoryControllerTest {
+public class CategoryControllerTest {
     public static final String NAME = "Jim";
 
     @Mock
@@ -35,8 +36,8 @@ class CategoryControllerTest {
 
     MockMvc mockMvc;
 
-    @BeforeEach
-    void setUp() {
+    @Before
+    public void setUp() {
         MockitoAnnotations.initMocks(this);
 
         mockMvc = MockMvcBuilders.standaloneSetup(categoryController)
